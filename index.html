@@ -12,6 +12,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+		<script src="jquery.js"></script>
+    <script>
+		$(function () {
+		  var includes = $('[data-include]')
+		  $.each(includes, function () {
+		    var file = $(this).data('include') + '.html'
+		    $(this).load(file)
+		  })
+		})
+
+		// $(function () {
+		// 	var container = document.getElementById("container");
+		// 	var includes = $('[data-include]')
+		// 	$.each(includes, function () {
+		// 	   container.innerHTML += '<div class="col-4 col-6-medium col-12-small">
+		// 			 <a href="#work1" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+		// 			 <p>'+$(this).data('include')+'</p>
+		// 		 </div>';
+		// 	})
+		// })
+    </script>
+
+
 	</head>
 	<body class="is-preload">
 
@@ -106,14 +130,17 @@
 								</section>
 							</article>
 
-							<!-- work1 -->
+							<!-- Work subpages -->
 							<article id="work1" class="panel">
-								<header>
-									<h2>Predicting Flight Delays</h2>
-								</header>
-								<p>
-									Flight delays
-								</p>
+								<div data-include="work1"></div>
+							</article>
+
+							<article id="work2" class="panel">
+								<div data-include="work2"></div>
+							</article>
+
+							<article id="work3" class="panel">
+								<div data-include="work3"></div>
 							</article>
 
 						<!-- Journal -->
@@ -131,7 +158,7 @@
 											<p></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#journal2" class="image fit"><img src="images/pic08.jpg" alt="" title=""></a>
+											<a href="#journal2" class="image fit"><img src="images/pic08.jpg" alt="" title="Two Pigeons"></a>
 											<p></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
@@ -140,6 +167,19 @@
 										</div>
 									</div>
 								</section>
+							</article>
+
+						<!-- Journal subpages -->
+							<article id="journal1" class="panel">
+								<div data-include="journal1"></div>
+							</article>
+
+							<article id="journal2" class="panel">
+								<div data-include="journal2"></div>
+							</article>
+
+							<article id="journal3" class="panel">
+								<div data-include="journal3"></div>
 							</article>
 
 						<!-- Contact -->
