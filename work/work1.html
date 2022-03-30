@@ -2,5 +2,94 @@
   <h2>A Forcasting Model of Flight Delays in the U.S.</h2>
 </header>
 <p>
-  Flight delays
+  As flying has become a more popular and commonplace means of transportation, the nature of the air travel experience began to change. People now face new problems of flight delays, leading to both mental and financial costs. This project combines two datasets on airline performance and weather events and builds several models to predict whether a flight will likely delay. The final model of <b>random forest</b> has reached <b>a weighted F1-score of 0.67</b> with a discussion of model limitation and fairness in the end. You can navigate through the page and find more details about this project. This project was conducted as part of a class project of ORIE 4741. <br> <br>
+
+  Various factors can lead to flight delays, including the airport’s traffic volume, different airline policies, and changing weather conditions. To make accurate predictions, we rely on the combination of two major datasets:  <br> <br>
+
+  <i>Airline reporting carrier on-time performance dataset, which contains flight information like start/destinations, airline code, etc [2]. <br> <br>
+
+  US Weather Events, which contains weather warnings issued by weather stations in different airports [3]. </i><br> <br>
+
+  After doing <b>preliminary analysis (cleaning the dataset, finding correlations between features, and drawing graphs for visualizations)</b> and defining the data scope (restraining data to include only the 10 airports with most flights), we conducted feature engineering using methods such <b>dimentionality reduction, real encoding, and one-hot encoding</b>. <br> <br>
+
+  During model building, we initially trained three models, including <b>logistic regression, random forest, and boosting trees</b>. We use <b>tree-based ensemble methods</b> because we believe that the features affect flight delay in a non-linear way, and tree-based methods can better capture such trends. <br> <br>
+
+  In addition, we used <b>XG boost</b>, which is a dominating used library in machine learning which can develop fast and high performance gradient boosting tree models. It improves upon Gradient Boosting by adding clever penalizations for trees and using Newton Boosting [5]. <br> <br>
+
+  For all our models, we followed the same framework of <b>train-test-validation split</b>: We train our model on training data; validate and <b>tune hyper-paraemters</b> on <b>k-fold</b> of training data or on validation data; then we finalize the hyperparameters and produces a final test accuracy on the test set. Since we are facing a classification problem with an unbalanced dataset, we decided to use the weight F-1 score as a measure of how good our model performs. The detailed result can be found through the link to final report (at the end of the pgae). <br> <br>
+
+  Here is the final F-1 score we achieved in the end. The final hyperparameters of each of the following models can be found in the corresponding Jupyter Notebook through the link to Github repository (at the end of the pgae). <br> <br>
+
+  <table>
+    <tr>
+      <td><b>Algorithm</b></td>
+      <td><b>Weight F-1 Score</b></td>
+    </tr>
+    <tr>
+      <td>Logistic Regression</td>
+      <td>0.5947</td>
+    </tr>
+    <tr>
+      <td>Random Forest</td>
+      <td>0.67</td>
+    </tr>
+    <tr>
+      <td>Gradient Boosting Tree</td>
+      <td>0.64</td>
+    </tr>
+    <tr>
+      <td>AdaBoost</td>
+      <td>0.65</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>0.66</td>
+    </tr>
+    <tr>
+      <td>Dummy Majority Classifier</td>
+      <td>0.49</td>
+    </tr>
+  </table>
+
+  We are confident that the results we obtained are unbiased estimations of the model’s true performance, because we followed a strict train-test-validation data split. The <b>grid-search</b> we performed is conducted using training data with <b>k-fold cross-validation</b>. By running our final model on unknown test data, the accuracy obtained should be an <b>unbiased estimate of the true accuracy</b>. <br> <br>
+
+	As weighted F-1 score sometimes can be misleading when the dataset is highly unbalanced, we also included a <b>dummy majority model</b>’s weighted F-1 score as a reference. Clearly, all our models were able to extract useful information beyond simply guessing every plane arrived on time. Considering the fact that we are only using data available long before the plane’s departure, we would say our model functions as a good source to look to for the customers and airlines when they plan their flights. <br> <br>
+
+	After balancing final performance and interpretability, we propose random forest as our final model. <br> <br>
+
+  <img src="work1_1.jpg">  <br> <br>
+
+  We then use <b>WMD (Weapons of Math Destruction)</b> for the fairness analysis. This is a predictive model that has outcomes hard to measure, and predictions that cause negative consequences and create self-fulfilling feedback loops. We do not believe our model to be a WMD because:<br> <br>
+
+  1. Whether a flight is delayed or not is easily measurable. This means we can have a straightforward understanding of our model’s performance and observe its test error.<br> <br>
+
+  2. Our prediction will not create self-enforcing feedback cycles. If a flight is predicted to be run late, air-traffic controllers can assign faster routes and mitigate the problem instead of intensifying it.
+  <br> <br>
+
+  References<br>
+  [1] J. Rebollo and H. Balakrishnan, “Characterization and prediction of air traffic delays,” Transportation Research Part C: Emerging Technologies, vol 44, pp 231-241, Available: https://www.sciencedirect.com/science/article/pii/S0968090X14001041 <br>
+  [2] US Bureau of Transportation Statistics, “Airline Reporting Carrier On-Time Performance Dataset”, U.S, Published on: June 25, 2020, Accessed on: Nov 2021. Available: https://developer.ibm.com/exchanges/data/all/airline/#get-this-dataset <br>
+  [3] Moosavi, Sobhan, Mohammad Hossein Samavatian, Arnab Nandi, Srinivasan Parthasarathy, and Rajiv Ramnath. “Short and Long-term Pattern Discovery Over Large-Scale Geo-Spatiotemporal Data.” In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, ACM, 2019.
+  [4] J. Herbas, “Using Machine Learning to Predict Flight Delays,” Oct. 17, 2020, Available: https://medium.com/analytics-vidhya/using-machine-learning-to-predict-flight-delays-e8a50b0bb64c\<br>
+  [5] R. Gandhi, “Gradient Boosting and XGBoost,” May. 6, 2018, Available: https://medium.com/hackernoon/gradient-boosting-and-xgboost-90862daa6c77<br>
+  [6] “Feature importances with a forest of trees,” Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011. Available: https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html <br> <br>
+
+
+
+  <a href="final_report.pdf" target="_blank">Final report (pdf)</a>  <br>
+
+  <a href="https://github.com/PPPSDavid/ORIE-4741-Project">Github link of the project including report and codes</a>  <br> <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </p>
