@@ -2,4 +2,19 @@
   <h2>Simulation and Analysis of Helicopter Emergency Transport in Upstate New York</h2>
 </header>
 <p>
+  Helicopters serve as important means of transportation for emergent medical services due to their immediacy and flexibility. Therefore, deciding where and how to base the helicopters in order to boost efficiency and provide better services is a crucial task for the helicopter dispatch center. In this project, we aim to provide a specific set of recommendations on how many helicopters should be employed and where they should be based in upstate New York so as to <b>minimize the response time of the helicopters to the emergent calls, boost the fraction of calls that get responded, and make the best use of each employed helicopter to avoid unnecessary cost</b>. We tackle this task by constructing a <b>discrete-event simulation model</b> that replicates the helicopter transportation process. By running a <b>search-selection method</b> on the model, analyzing the changes in performance measures, and manually experimenting with different arrangements based on the observations, we present two sets of helicopter configuration recommendations (for every fixed number of helicopters from 1 to 12): one solely <b>prioritizing the average response time</b> for calls, and the other <b>allowing some trade-offs</b> between the average response time and the response fraction. To further assist the decision-making process, for each one of the 24 candidate configurations, we holistically take into account its performance measures, the number of helicopters used, the number of base locations used, etc., and arrive at two final recommendations: <br> <br>
+1) {Buffalo: 2, Rochester: 1, Ithaca: 1, Syracuse: 3, Albany: 1} with 8 helicopters, 29.24 minutes of average response time, 58.7% of response fraction, 3.146 of helicopter utilization;<br>
+2) {Buffalo: 2, Rochester: 3, Syracuse: 5, Albany: 2} with 12 helicopters, 33.54 minutes of average response time , 72.7% of response fraction, 2.600 of helicopter utilization. <br> <br>
+The two configurations have their own distinct advantages: configuration 1) prioritizes the minimization of response time, and with only 8 helicopters, it significantly boosts the helicopter utilization.<br> <br>
+This configuration should be used when a very quick response is desired over all other factors or when clients only want to use a limited number of helicopters. Configuration 2) has a high response fraction while
+pertaining to a reasonably low response time in the trade-off. It uses only 4 bases, which also saves the fixed cost. It should be used when a balance of high response fraction and low response time is needed. We remain
+optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The following report provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.
 </p>
+
+<a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project/blob/main/Report.pdf" target="_blank">Final report </a>  <br>
+
+<a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project" target="_blank"> Github link of the project including report and codes</a>  <br> <br>
+
+<a href="#work3" class="jumplink">
+  <span class="arrow icon solid fa-chevron-right"><span>Next</span></span>
+</a>
