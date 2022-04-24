@@ -1,20 +1,78 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+
 <header>
   <h2>Simulation and Analysis of Helicopter Emergency Transport in Upstate New York</h2>
 </header>
 <p>
-  Helicopters serve as important means of transportation for emergent medical services due to their immediacy and flexibility. Therefore, deciding where and how to base the helicopters in order to boost efficiency and provide better services is a crucial task for the helicopter dispatch center. In this project, we aim to provide a specific set of recommendations on how many helicopters should be employed and where they should be based in upstate New York so as to <b>minimize the response time of the helicopters to the emergent calls, boost the fraction of calls that get responded, and make the best use of each employed helicopter to avoid unnecessary cost</b>. We tackle this task by constructing a <b>discrete-event simulation model</b> that replicates the helicopter transportation process. By running a <b>search-selection method</b> on the model, analyzing the changes in performance measures, and manually experimenting with different arrangements based on the observations, we present two sets of helicopter configuration recommendations (for every fixed number of helicopters from 1 to 12): one solely <b>prioritizing the average response time</b> for calls, and the other <b>allowing some trade-offs</b> between the average response time and the response fraction. To further assist the decision-making process, for each one of the 24 candidate configurations, we holistically take into account its performance measures, the number of helicopters used, the number of base locations used, etc., and arrive at two final recommendations: <br> <br>
-1) {Buffalo: 2, Rochester: 1, Ithaca: 1, Syracuse: 3, Albany: 1} with 8 helicopters, 29.24 minutes of average response time, 58.7% of response fraction, 3.146 of helicopter utilization;<br>
-2) {Buffalo: 2, Rochester: 3, Syracuse: 5, Albany: 2} with 12 helicopters, 33.54 minutes of average response time , 72.7% of response fraction, 2.600 of helicopter utilization. <br> <br>
-The two configurations have their own distinct advantages: configuration 1) prioritizes the minimization of response time, and with only 8 helicopters, it significantly boosts the helicopter utilization.<br> <br>
+  Helicopters serve as important means of transportation for emergent medical services due to their immediacy and flexibility. Therefore, deciding where and how to base the helicopters in order to boost efficiency and provide better services is a crucial task for the helicopter dispatch center. In this project, we aim to provide a specific set of recommendations on how many helicopters should be employed and where they should be based in upstate New York so as to <b>minimize the response time of the helicopters to the emergent calls, boost the fraction of calls that get responded, and make the best use of each employed helicopter to avoid unnecessary cost</b>. We tackle this task by constructing a <b>discrete-event simulation model</b> that replicates the helicopter transportation process. The flow chart below shows the logic of this model.<br>
+
+  <center><img class="center-fit" src="work/work2_1.png"></center>  <br>
+
+  By running a <b>search-selection method</b> on the model, analyzing the changes in performance measures, and manually experimenting with different arrangements based on the observations, we present two sets of helicopter configuration recommendations (for every fixed number of helicopters from 1 to 12): one solely <b>prioritizing the average response time</b> for calls, and the other <b>allowing some trade-offs</b> between the average response time and the response fraction. To further assist the decision-making process, for each one of the 24 candidate configurations, we holistically take into account its performance measures, the number of helicopters used, the number of base locations used, etc., and arrive at two final recommendations.  <br> <br>
+
+  <table>
+    <tr>
+      <td><b>Buffalo</b></td>
+      <td><b>Rochester</b></td>
+      <td><b>Ithaca</b></td>
+      <td><b>Syracuse</b></td>
+      <td><b>Albany</b></td>
+      <td><b>resp.t(min)</b></td>
+      <td><b>resp_frac</b></td>
+      <td><b>util</b></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>29.24</td>
+      <td>58.7%</td>
+      <td>3.2</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>33.54</td>
+      <td>72.7%</td>
+      <td>2.6</td>
+    </tr>
+  </table>
+
+The two configurations have their own distinct advantages: configuration 1) prioritizes the minimization of response time, and with only 8 helicopters, it significantly boosts the helicopter utilization.
 This configuration should be used when a very quick response is desired over all other factors or when clients only want to use a limited number of helicopters. Configuration 2) has a high response fraction while
 pertaining to a reasonably low response time in the trade-off. It uses only 4 bases, which also saves the fixed cost. It should be used when a balance of high response fraction and low response time is needed. We remain
-optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The following report provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.
+optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The report attached at the bottom provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.<br><br>
+
+Here is a deck showing the detailed results of the analysis.
 </p>
 
-<a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project/blob/main/Report.pdf" target="_blank">Final report </a>  <br>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjtTD7dXaZkrTCX9OzGH7slZEdfPuAAqZrxPJcLMtz-z_xpCfCBciDSoqZouvxAZ8WHKBmOctI0rED/embed?start=false&loop=false&delayms=3000" frameborder="0" width=800 height=486 allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-<a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project" target="_blank"> Github link of the project including report and codes</a>  <br> <br>
+<br><br>
+<a href="work/work_2_final_report.pdf" target="_blank">Final report </a>  <br><br>
+
+<!-- <a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project" target="_blank"> Github link</a>  <br> <br> -->
 
 <a href="#work3" class="jumplink">
   <span class="arrow icon solid fa-chevron-right"><span>Next</span></span>
 </a>
+</body>
