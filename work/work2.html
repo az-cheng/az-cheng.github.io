@@ -4,6 +4,10 @@
             margin: 0;
             padding: 0;
         }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
         .center-fit {
             max-width: 100%;
             max-height: 100vh;
@@ -20,7 +24,8 @@
 <p>
   Helicopters serve as important means of transportation for emergent medical services due to their immediacy and flexibility. Therefore, deciding where and how to base the helicopters in order to boost efficiency and provide better services is a crucial task for the helicopter dispatch center. In this project, we aim to provide a specific set of recommendations on how many helicopters should be employed and where they should be based in upstate New York so as to <b>minimize the response time of the helicopters to the emergent calls, boost the fraction of calls that get responded, and make the best use of each employed helicopter to avoid unnecessary cost</b>. We tackle this task by constructing a <b>discrete-event simulation model</b> that replicates the helicopter transportation process. The flow chart below shows the logic of this model.<br>
 
-  <center><img class="center-fit" src="work/work2_1.png"></center>  <br>
+  <div class="imgbox">
+    <img class="center-fit" src="work/work2_1.png"></div>  <br>
 
   By running a <b>search-selection method</b> on the model, analyzing the changes in performance measures, and manually experimenting with different arrangements based on the observations, we present two sets of helicopter configuration recommendations (for every fixed number of helicopters from 1 to 12): one solely <b>prioritizing the average response time</b> for calls, and the other <b>allowing some trade-offs</b> between the average response time and the response fraction. To further assist the decision-making process, for each one of the 24 candidate configurations, we holistically take into account its performance measures, the number of helicopters used, the number of base locations used, etc., and arrive at two final recommendations.  <br> <br>
 
@@ -63,14 +68,11 @@ pertaining to a reasonably low response time in the trade-off. It uses only 4 ba
 optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The report attached at the bottom provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.<br><br>
 
 Here is a deck showing the detailed results of the analysis.
-</p>
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjtTD7dXaZkrTCX9OzGH7slZEdfPuAAqZrxPJcLMtz-z_xpCfCBciDSoqZouvxAZ8WHKBmOctI0rED/embed?start=false&loop=false&delayms=3000" frameborder="0" width=800 height=486 allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<div class="imgbox"><iframe class="center-fit" src="https://docs.google.com/presentation/d/e/2PACX-1vQjtTD7dXaZkrTCX9OzGH7slZEdfPuAAqZrxPJcLMtz-z_xpCfCBciDSoqZouvxAZ8WHKBmOctI0rED/embed?start=false&loop=false&delayms=3000" frameborder="0" width=800 height=486 allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 
-<br><br>
+<br>
 <a href="work/work_2_final_report.pdf" target="_blank">Final report </a>  <br><br>
-
-<!-- <a href="https://github.com/Joeyetinghan/ORIE4580_Simulation_Project" target="_blank"> Github link</a>  <br> <br> -->
 
 <a href="#work3" class="jumplink">
   <span class="arrow icon solid fa-chevron-right"><span>Next</span></span>

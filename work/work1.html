@@ -1,3 +1,22 @@
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
 <header>
   <h2>A Forcasting Model of Flight Delays in the U.S.</h2>
 </header>
@@ -6,7 +25,8 @@
 
   Various factors can lead to flight delays, including the airport’s traffic volume, different airline policies, and changing weather conditions. After doing <b>preliminary analysis (cleaning the dataset, finding correlations between features, and drawing graphs for visualizations)</b> and defining the data scope (restraining data to include only the 10 airports with most flights), we conducted feature engineering using methods such <b>dimentionality reduction, real encoding, and one-hot encoding</b>. The following graph shows the arrival delay distribution after doing feature engineering. <br>
 
-  <center><img src="work/work1_2.png"> <br></center> <br>
+  <div class="imgbox">
+  <img class="center-fit" src="work/work1_2.png"> </div><br>
 
   During model building, we initially trained three models, including <b>logistic regression, random forest, and boosting trees</b>. We use <b>tree-based ensemble methods</b> because we believe that the features affect flight delay in a non-linear way, and tree-based methods can better capture such trends. <br> <br>
 
@@ -53,7 +73,8 @@
 
 	After balancing final performance and interpretability, we propose random forest as our final model. <br> <br>
 
-  <center><img src="work/work1_1.jpg"></center>  <br>
+  <div class="imgbox">
+  <img class="center-fit" src="work/work1_1.jpg"></div><br>
 
   We then use <b>WMD (Weapons of Math Destruction)</b> for the fairness analysis. This is a predictive model that has outcomes hard to measure, and predictions that cause negative consequences and create self-fulfilling feedback loops. We do not believe our model to be a WMD because:<br> <br>
 
@@ -73,3 +94,4 @@
   </a>
 
 </p>
+</body>
