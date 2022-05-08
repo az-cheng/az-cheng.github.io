@@ -22,11 +22,13 @@
   <h2>Simulation and Analysis of Helicopter Emergency Transport in Upstate New York</h2>
 </header>
 <p>
+  <b><font size="+2"> Background </font></b><br>
   Helicopters serve as important means of transportation for emergent medical services due to their immediacy and flexibility. Therefore, deciding where and how to base the helicopters in order to boost efficiency and provide better services is a crucial task for the helicopter dispatch center. In this project, we aim to provide a specific set of recommendations on how many helicopters should be employed and where they should be based in upstate New York so as to <b>minimize the response time of the helicopters to the emergent calls, boost the fraction of calls that get responded, and make the best use of each employed helicopter to avoid unnecessary cost</b>. We tackle this task by constructing a <b>discrete-event simulation model</b> that replicates the helicopter transportation process. The flow chart below shows the logic of this model.<br>
 
   <div class="imgbox">
     <img class="center-fit" src="work/work2_1.png"></div>  <br>
 
+  <b><font size="+2"> Model building </font></b><br>
   By running a <b>search-selection method</b> on the model, analyzing the changes in performance measures, and manually experimenting with different arrangements based on the observations, we present two sets of helicopter configuration recommendations (for every fixed number of helicopters from 1 to 12): one solely <b>prioritizing the average response time</b> for calls, and the other <b>allowing some trade-offs</b> between the average response time and the response fraction. To further assist the decision-making process, for each one of the 24 candidate configurations, we holistically take into account its performance measures, the number of helicopters used, the number of base locations used, etc., and arrive at two final recommendations.  <br> <br>
 
   <table>
@@ -62,12 +64,10 @@
     </tr>
   </table>
 
-The two configurations have their own distinct advantages: configuration 1) prioritizes the minimization of response time, and with only 8 helicopters, it significantly boosts the helicopter utilization.
-This configuration should be used when a very quick response is desired over all other factors or when clients only want to use a limited number of helicopters. Configuration 2) has a high response fraction while
-pertaining to a reasonably low response time in the trade-off. It uses only 4 bases, which also saves the fixed cost. It should be used when a balance of high response fraction and low response time is needed. We remain
-optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The report attached at the bottom provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.<br><br>
+  <b><font size="+2"> Discussion </font></b><br>
+The two configurations have their own distinct advantages: <b>Configuration 1)</b> prioritizes the minimization of response time, and with only 8 helicopters, it significantly boosts the helicopter utilization. This configuration should be used when a very quick response is desired over all other factors or when clients only want to use a limited number of helicopters. <b>Configuration 2)</b> has a high response fraction while pertaining to a reasonably low response time in the trade-off. It uses only 4 bases, which also saves the fixed cost. It should be used when a balance of high response fraction and low response time is needed. We remain optimistic that a number of other similar configurations yield slightly different but equivalently competent performances, as shown in our full result table, and could be adopted based on client needs. The report attached at the bottom provide detailed descriptions of the problem, our modeling approach and implementations, our selection methods and results, and analysis and discussion of the modeling process.<br><br>
 
-Here is a deck showing the detailed results of the analysis.
+Here is a deck showing the detailed results of the analysis.<br>
 
 <div class="imgbox"><iframe class="center-fit" src="https://docs.google.com/presentation/d/e/2PACX-1vQjtTD7dXaZkrTCX9OzGH7slZEdfPuAAqZrxPJcLMtz-z_xpCfCBciDSoqZouvxAZ8WHKBmOctI0rED/embed?start=false&loop=false&delayms=3000" frameborder="0" width=800 height=486 allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 
