@@ -1,10 +1,13 @@
 Annie Cheng @az-cheng
 
-This is my personal website, first developed during a class at Cornell University, ENGRC 3025 Creating and Communicating Your Digital Professionalism. Thanks to Dr. Hutchison for giving me useful feedback.
+Welcome to the repository for Annie's personal website! This site showcases her professional background, skills, and achievements, providing a comprehensive overview of her career trajectory and the projects she has undertaken. This website is built using HTML, CSS, and JavaScript.
 
-As I am looking to become a professional in strategic management and consulting, my intended audience are potential employees. I would like to demonstrate my resourcefulness, well roundedness, initiative, communication skills, as well as professionalism through the website.
 
-Some of the contents are still work in progress. I appreciate any feedback to make the website better!
+Once you have opened the website, you can navigate through the following sections:
+
+Home: The homepage, featuring Annie's personal statement and a brief overview of her background.
+About Me: A more in-depth look at Annie's background, skills, and interests.
+Projects: A showcase of Annie's most significant projects, demonstrating her expertise and experience across various domains.
 
 
 Credits:
