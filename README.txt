@@ -1,4 +1,4 @@
-Annie Cheng @az-cheng
+Zhenyi (Annie) Cheng @az-cheng
 
 Welcome to the repository for Annie's personal website! This site showcases her professional background, skills, and achievements, providing a comprehensive overview of her career trajectory and the projects she has undertaken. This website is built using HTML, CSS, and JavaScript.
 
